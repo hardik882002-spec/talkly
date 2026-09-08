@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: talkly
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install --no-audit --no-fund && npm run build
+    startCommand: npm start
+    autoDeploy: true
