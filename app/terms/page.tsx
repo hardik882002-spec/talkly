@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main className="info"><Link className="back" href="/">← Back to Talkly</Link><h1>Terms</h1><p>Talkly is an anonymous conversation service for adults aged 18 and over.</p><p>Do not use the service for harassment, threats, scams, sexual exploitation, hate, spam, or illegal activity. Talkly may disconnect or ban sessions that violate these rules.</p></main>}
