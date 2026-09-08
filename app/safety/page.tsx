@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main className="info"><Link className="back" href="/">← Back to Talkly</Link><h1>Safety</h1><p>Talkly is intended for adults. Be respectful and never share personal information with strangers.</p><h2>Stay safe</h2><p>Do not share passwords, financial details, addresses, phone numbers, or private documents. Leave and report conversations that make you uncomfortable.</p><p>Talkly may temporarily process session, connection, and report metadata for abuse prevention.</p></main>}
