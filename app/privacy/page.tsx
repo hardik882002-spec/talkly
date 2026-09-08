@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main className="info"><Link className="back" href="/">← Back to Talkly</Link><h1>Privacy</h1><p>Talkly does not require an account, email, password, subscription, or public profile.</p><p>Normal chat messages are not designed to be permanently stored. The MVP may temporarily process technical session information and moderation reports to operate and protect the service.</p></main>}
