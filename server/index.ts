@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import http from 'http'; import express from 'express'; import next from 'next'; import {Server} from 'socket.io'; import crypto from 'crypto';
-const dev=process.env.NODE_ENV!=='production',port=Number(process.env.PORT||3000),app=next({dev}),handle=app.getRequestHandler();
+const dev=process.env.NODE_ENV!=='production',port=Number(process.env.PORT||3000),app=next({dev}),handle=(app as any).getRequestHandler();
 type User={id:string,mode:'text'|'voice'|'video',room?:string,peer?:string,ip:string,connectedAt:number};
 const users=new Map<string,User>(); const queues:Record<string,string[]>={text:[],voice:[],video:[]}; const rooms=new Map<string,Set<string>>(); const reports:any[]=[]; const banned=new Set<string>();
 const clean=(s:string)=>s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'').trim().slice(0,500); function removeQueue(id:string){for(const q of Object.values(queues)){const i=q.indexOf(id);if(i>=0)q.splice(i,1)}} function broadcastPresence(io:Server){io.emit('presence',users.size)}
